@@ -1,3 +1,18 @@
-Please create a To do list website
+# Please create a To do list
 
-Update the deploy link here:
+## Requirements:
+
+1. A to-do item should have name, date and status
+2. The to-do name is unique
+3. Validation: when the user did NOT insert any name or date it should shown a warning
+4. The color of to-do item should match the status color (for example: not started status had red color)
+5. Styling is up to you :)
+
+## Update the deploy link here:
+
+## Here is a sample:
+
+Todo form
+![This is an image](./screenshots/todoform.png)
+Todo list
+![This is an image](./screenshots/todolist.png)
