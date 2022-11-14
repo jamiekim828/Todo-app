@@ -4,9 +4,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
     <title>To do list</title>
   </head>
   <body>
-    <p>To do list</p>
+    <header>
+      <h1>TODOLIST</h1>
+    </header>
+    <main>
+      <div id="form">
+        <input type="text" id="list_title" placeholder="To do..." />
+        <input type="date" id="list_date" />
+        <select name="status" id="list_status">
+          <option disabled selected value>--choose the status--</option>
+          <option id="not_started" value="not_started"></option>
+          <option id="in_progress" value="in_progress"></option>
+          <option id="done" value="done">Done</option>
+        </select>
+        <button id="addBtn">Add</button>
+      </div>
+      <div id="listsDiv">
+        <ul id="lists"></ul>
+      </div>
+    </main>
+    <footer>
+      <div id="done_number"></div>
+      <div id="color_description">
+        <div id="description1"></div>
+        <div id="description2"></div>
+        <div id="description3"></div>
+      </div>
+    </footer>
   </body>
+  <script src="./javascript.js"></script>
 </html>

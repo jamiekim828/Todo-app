@@ -1,0 +1,149 @@
+* {
+  font-family: poppins;
+}
+header {
+  color: rgba(0, 0, 255, 0.743);
+  font-size: 30px;
+  font-weight: 900;
+  text-align: center;
+}
+
+main {
+  text-align: center;
+}
+
+#form {
+  display: inline-block;
+}
+
+#list_title {
+  border: 2px solid rgb(85, 165, 245);
+  border-radius: 4px;
+  width: 230px;
+  height: 47px;
+}
+
+#list_date {
+  background-color: rgb(85, 165, 245);
+  padding: 15px;
+  font-family: 'Roboto Mono', monospace;
+  color: #ffffff;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+#list_date:hover {
+  cursor: pointer;
+}
+
+#list_status {
+  background-color: rgb(85, 165, 245);
+  top: 100%;
+  left: 0;
+  right: 0;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.not_started,
+#description1 div {
+  background-color: rgb(245, 149, 149);
+}
+.in_progress,
+#description2 div {
+  background-color: rgb(249, 231, 144);
+}
+.done,
+#description3 div {
+  background-color: rgb(151, 246, 192);
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+  display: flex;
+  width: 600px;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  padding-left: 40px;
+  padding-right: 60px;
+  font-family: poppins;
+}
+
+li span {
+  margin-left: 40px;
+}
+
+#addBtn {
+  margin-left: 20px;
+  border-radius: 27px;
+  border: none;
+  background-color: rgb(85, 165, 245);
+  color: white;
+  width: 90px;
+  height: 40px;
+}
+
+#addBtn:hover {
+  cursor: pointer;
+}
+
+.deleteBtn {
+  margin-left: 30px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(240, 24, 50);
+  color: white;
+  width: 70px;
+  height: 30px;
+}
+
+.deleteBtn:hover {
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+}
+
+#done_number {
+  color: rgba(0, 0, 255, 0.743);
+  font-size: 28px;
+  margin: auto;
+}
+
+#color_description {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25%;
+  margin-top: 40px;
+}
+
+#description1,
+#description2,
+#description3 {
+  display: flex;
+}
+
+#description1 div,
+#description2 div,
+#description3 div {
+  width: 20px;
+  height: 50px;
+  margin-right: 15px;
+}
