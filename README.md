@@ -11,6 +11,12 @@
 
 ## Update the deploy link here:
 
+![This is my work until now](./screenshots/My_Screenshot.png)
+still need to fix
+
+- Checking the title already exist or not
+- Set new array after delete
+
 ## Here is a sample:
 
 Todo form
