@@ -62,6 +62,7 @@ const addList = () => {
   deleteButton.onclick = removeList;
 
   // display number of done todo
+  console.log(array);
   const doneDiv = document.getElementById('done_number');
   const doneItems = document.getElementsByClassName('done');
   doneDiv.innerHTML = `${doneItems.length} item(s) done out of ${array.length}`;
@@ -78,6 +79,15 @@ const removeList = (element) => {
   for (let i = 0; i < array[0].length; i++) {
     if (array[0][i].id === thisItem) {
       array[0][i].remove();
+      const newArray = Object.values(array[0]).map((el) =>
+        Object.keys(array[0]).indexOf(el) > i
+          ? array[0].splice(i - 1, 0, el)
+          : el
+      );
+      const doneDiv = document.getElementById('done_number');
+      const doneItems = document.getElementsByClassName('done');
+      doneDiv.innerHTML = `${doneItems.length} item(s) done out of ${newArray.length}`;
+      return newArray;
     }
   }
 };
