@@ -53,8 +53,6 @@ const addList = () => {
   li.classList.add(`${listStatus.value}`);
   li.setAttribute('id', `${listTitle.value}`);
   array.push(eachList);
-  console.log(array);
-  console.log(Object.values(array[0]));
 
   // each list will have delete button
   const deleteButton = document.createElement('button');
