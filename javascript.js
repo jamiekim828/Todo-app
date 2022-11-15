@@ -11,6 +11,50 @@ const addButton = document.getElementById('addBtn');
 
 // set empty array
 const array = [];
+// add todo list function
+// add button will call this function
+const addList = () => {
+  const eachList = document.getElementsByTagName('li');
+
+  // display the list
+  const todolist = document.createElement('li');
+  const li = lists.appendChild(todolist);
+  li.innerHTML = `<span>Title: ${listTitle.value}</span> <span>Date: ${listDate.value}</span>`;
+  // each list will have class and id
+  li.classList.add(`${listStatus.value}`);
+  li.setAttribute('id', `${listTitle.value}`);
+  array.push(eachList);
+  // each list will have delete button
+  const deleteButton = document.createElement('button');
+  deleteButton.setAttribute('class', 'deleteBtn');
+  deleteButton.appendChild(document.createTextNode('Delete'));
+  li.appendChild(deleteButton);
+  deleteButton.onclick = removeList;
+  // display number of done todo
+  const doneDiv = document.getElementById('done_number');
+  const doneItems = document.getElementsByClassName('done');
+  doneDiv.innerHTML = `${doneItems.length} item(s) done`;
+};
+// add button onclick
+// addButton.onclick = addList;
+addButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  // validate title function call
+  const isValid = validateTitle(listTitle.value);
+  if (!isValid) return;
+  // validate status function call
+  const isStatusValid = validateStatus(listStatus.value);
+  if (!isStatusValid) {
+    return;
+  }
+
+  addList();
+
+  // clear input after add
+  listTitle.value = '';
+  listDate.value = '';
+  listStatus.value = '';
+});
 // validate title existence
 // and validate unique title function
 const validateTitle = (title) => {
@@ -35,41 +79,6 @@ const validateStatus = (status) => {
   }
   return true;
 };
-// add todo list function
-// add button will call this function
-const addList = () => {
-  const eachList = document.getElementsByTagName('li');
-  // validate title function call
-  validateTitle(listTitle.value);
-  const isValid = validateTitle(listTitle.value);
-  if (!isValid) return;
-  // validate status function call
-  validateStatus(listStatus.value);
-  const isStatusValid = validateStatus(listStatus.value);
-  if (!isStatusValid) return;
-  // display the list
-  const todolist = document.createElement('li');
-  const li = lists.appendChild(todolist);
-  li.innerHTML = `<span>Title: ${listTitle.value}</span> <span>Date: ${listDate.value}</span>`;
-  // each list will have class and id
-  li.classList.add(`${listStatus.value}`);
-  li.setAttribute('id', `${listTitle.value}`);
-  array.push(eachList);
-  // each list will have delete button
-  const deleteButton = document.createElement('button');
-  deleteButton.setAttribute('class', 'deleteBtn');
-  deleteButton.appendChild(document.createTextNode('Delete'));
-  li.appendChild(deleteButton);
-  deleteButton.onclick = removeList;
-  // display number of done todo
-  const doneDiv = document.getElementById('done_number');
-  const doneItems = document.getElementsByClassName('done');
-  doneDiv.innerHTML = `${doneItems.length} item(s) done`;
-  // clear input after add
-  listTitle.value = '';
-  listDate.value = '';
-  listStatus.value = '';
-};
 // remove function
 // this function is called from delete button
 const removeList = (element) => {
@@ -90,8 +99,7 @@ const removeList = (element) => {
     }
   }
 };
-// add button onclick
-addButton.onclick = addList;
+
 // HTML work
 notStarted.innerText = 'Not started';
 inProgress.innerText = 'In progress';
