@@ -11,8 +11,8 @@ const addButton = document.getElementById('addBtn');
 
 // set empty array
 const array = [];
-
-// validate title existence function
+// validate title existence
+// and validate unique title function
 const validateTitle = (title) => {
   if (!title) {
     alert('where is the title?');
@@ -35,21 +35,18 @@ const validateStatus = (status) => {
   }
   return true;
 };
-
 // add todo list function
 // add button will call this function
 const addList = () => {
   const eachList = document.getElementsByTagName('li');
-
-  // validate function call if there is title or not
+  // validate title function call
   validateTitle(listTitle.value);
   const isValid = validateTitle(listTitle.value);
   if (!isValid) return;
-
+  // validate status function call
   validateStatus(listStatus.value);
   const isStatusValid = validateStatus(listStatus.value);
   if (!isStatusValid) return;
-
   // display the list
   const todolist = document.createElement('li');
   const li = lists.appendChild(todolist);
@@ -58,25 +55,22 @@ const addList = () => {
   li.classList.add(`${listStatus.value}`);
   li.setAttribute('id', `${listTitle.value}`);
   array.push(eachList);
-
   // each list will have delete button
   const deleteButton = document.createElement('button');
   deleteButton.setAttribute('class', 'deleteBtn');
   deleteButton.appendChild(document.createTextNode('Delete'));
   li.appendChild(deleteButton);
   deleteButton.onclick = removeList;
-
   // display number of done todo
   console.log('this or that? array', array);
   const doneDiv = document.getElementById('done_number');
   const doneItems = document.getElementsByClassName('done');
   doneDiv.innerHTML = `${doneItems.length} item(s) done`;
-
+  // clear input after add
   listTitle.value = '';
   listDate.value = '';
   listStatus.value = '';
 };
-
 // remove function
 // this function is called from delete button
 const removeList = (element) => {
@@ -98,10 +92,8 @@ const removeList = (element) => {
     }
   }
 };
-
 // add button onclick
 addButton.onclick = addList;
-
 // HTML work
 notStarted.innerText = 'Not started';
 inProgress.innerText = 'In progress';
