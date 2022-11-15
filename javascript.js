@@ -62,7 +62,6 @@ const addList = () => {
   li.appendChild(deleteButton);
   deleteButton.onclick = removeList;
   // display number of done todo
-  console.log('this or that? array', array);
   const doneDiv = document.getElementById('done_number');
   const doneItems = document.getElementsByClassName('done');
   doneDiv.innerHTML = `${doneItems.length} item(s) done`;
@@ -84,7 +83,6 @@ const removeList = (element) => {
           : el
       );
       // display number of done todo
-      console.log('this or that? newArray', newArray);
       const doneDiv = document.getElementById('done_number');
       const doneItems = document.getElementsByClassName('done');
       doneDiv.innerHTML = `${doneItems.length} item(s) done out of ${newArray.length}`;
