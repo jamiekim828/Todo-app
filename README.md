@@ -9,9 +9,9 @@
 5. The user can delete the to-do item
 6. Styling is up to you :)
 
-## Update the deploy link here:
+## Update the deploy link here: [Here](https://jamiekim828.github.io/ISA6_TodoList/)
 
-![This is my work until now](./screenshots/My_Screenshot.png)
+![This is my work](./screenshots/My_Screenshot.png)
 
 ## Here is a sample:
 
