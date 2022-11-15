@@ -62,10 +62,10 @@ const addList = () => {
   deleteButton.onclick = removeList;
 
   // display number of done todo
-  console.log(array);
+  console.log('this or that? array', array);
   const doneDiv = document.getElementById('done_number');
   const doneItems = document.getElementsByClassName('done');
-  doneDiv.innerHTML = `${doneItems.length} item(s) done out of ${array.length}`;
+  doneDiv.innerHTML = `${doneItems.length} item(s) done`;
 
   listTitle.value = '';
   listDate.value = '';
@@ -84,6 +84,8 @@ const removeList = (element) => {
           ? array[0].splice(i - 1, 0, el)
           : el
       );
+      // display number of done todo
+      console.log('this or that? newArray', newArray);
       const doneDiv = document.getElementById('done_number');
       const doneItems = document.getElementsByClassName('done');
       doneDiv.innerHTML = `${doneItems.length} item(s) done out of ${newArray.length}`;
