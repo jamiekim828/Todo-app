@@ -9,11 +9,23 @@ const done = document.getElementById('done');
 const lists = document.getElementById('lists');
 const addButton = document.getElementById('addBtn');
 
+// set empty array
+const array = [];
+
 // validate title existence function
 const validateTitle = (title) => {
   if (!title) {
     alert('where is the title?');
+    return false;
   }
+  if (
+    array.length > 0 &&
+    Object.values(array[0]).some((todo) => todo.id === title)
+  ) {
+    alert('Sorry, this title already exists');
+    return false;
+  }
+  return true;
 };
 // validate status existence function
 const validateStatus = (status) => {
@@ -21,9 +33,6 @@ const validateStatus = (status) => {
     alert('how is the status now?');
   }
 };
-
-// set empty array
-const array = [];
 
 // add todo list function
 // add button will call this function
@@ -33,6 +42,8 @@ const addList = () => {
   // validate function call if there is title or not
   validateTitle(listTitle.value);
   validateStatus(listStatus.value);
+  const isValid = validateTitle(listTitle.value);
+  if (!isValid) return;
 
   // display the list
   const todolist = document.createElement('li');
@@ -42,6 +53,8 @@ const addList = () => {
   li.classList.add(`${listStatus.value}`);
   li.setAttribute('id', `${listTitle.value}`);
   array.push(eachList);
+  console.log(array);
+  console.log(Object.values(array[0]));
 
   // each list will have delete button
   const deleteButton = document.createElement('button');
