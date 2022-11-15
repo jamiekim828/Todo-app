@@ -31,7 +31,9 @@ const validateTitle = (title) => {
 const validateStatus = (status) => {
   if (!status) {
     alert('how is the status now?');
+    return false;
   }
+  return true;
 };
 
 // add todo list function
@@ -41,9 +43,12 @@ const addList = () => {
 
   // validate function call if there is title or not
   validateTitle(listTitle.value);
-  validateStatus(listStatus.value);
   const isValid = validateTitle(listTitle.value);
   if (!isValid) return;
+
+  validateStatus(listStatus.value);
+  const isStatusValid = validateStatus(listStatus.value);
+  if (!isStatusValid) return;
 
   // display the list
   const todolist = document.createElement('li');
