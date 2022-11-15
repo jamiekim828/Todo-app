@@ -61,6 +61,11 @@ const addList = () => {
   li.appendChild(deleteButton);
   deleteButton.onclick = removeList;
 
+  // display number of done todo
+  const doneDiv = document.getElementById('done_number');
+  const doneItems = document.getElementsByClassName('done');
+  doneDiv.innerHTML = `${doneItems.length} item(s) done out of ${array.length}`;
+
   listTitle.value = '';
   listDate.value = '';
   listStatus.value = '';
